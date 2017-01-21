@@ -12,7 +12,7 @@ import scipy
 import AreaAvgOverTime
 import GetDataMap
 
-def drawMap(flatTLon, flatTLat, flatTData, latRange, lonRange, minVal, maxVal, title, xlabel, show=True):
+def drawMap(flatTLon, flatTLat, flatTData, latRange, lonRange, minVal, maxVal, title, xlabel, destination, show=True):
 	m = Basemap(width=10000000/8,height=7000000/8,
 	            resolution='l',projection='stere',
 	            lat_ts = 40, lat_0=sum(latRange)/2, lon_0 = sum(lonRange)/2)
@@ -38,5 +38,7 @@ def drawMap(flatTLon, flatTLat, flatTData, latRange, lonRange, minVal, maxVal, t
 	plt.title(title)
 	plt.xlabel(xlabel)
 
+	plt.savefig(destination, format='eps', dpi=1000)
+	
 	if show:
 		plt.show()

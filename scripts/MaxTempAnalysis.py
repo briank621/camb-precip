@@ -16,12 +16,16 @@ import DrawBaseMap
 
 latRange = [5,20]
 lonRange = [90,120]
-models = ['noresm1-m', 'cnrm-cm5', 'bnu-esm', 'ccsm4', 'hadgem2-es']
+models = ['csiro-mk3-6-0']
+ensemble = range(1, 11)
+
+
+# models = ['noresm1-m', 'cnrm-cm5', 'bnu-esm', 'ccsm4']
 # models = ['mri-cgcm3']
+# ensemble = [1]
 var = 'tasmax'
 monthStart = 1
 monthEnd = 12
-ensemble = [1]
 #seasons from dec to february, march to may, june to august, sep to nov
 avgOverTimeBase = AreaAvgOverTime.AreaAvgOverTime(var, models, ensemble, [1985,2005], latRange, lonRange, monthStart, monthEnd)
 avgOverTimeFuture = AreaAvgOverTime.AreaAvgOverTime(var,models, ensemble, [2045,2065], latRange, lonRange, monthStart, monthEnd)
@@ -40,5 +44,6 @@ minVal = -5
 maxVal = 5
 title = 'Mean Max Temperature in 2045-2065 Relative to 1985-2005 '
 xlabel = 'Temperature (C)'
+path = "data/plots/high_res/maxtempavg.eps"
 DrawBaseMap.drawMap(flatTLon, flatTLat, flatTData, latRange, lonRange,
-					 minVal, maxVal, title, xlabel)
+					 minVal, maxVal, title, xlabel, path)

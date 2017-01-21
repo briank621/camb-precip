@@ -31,3 +31,5 @@ def draw(sumOverTime):
 	## change the style of fliers and their fill
 	for flier in bp['fliers']:
 	    flier.set(marker='o', color='#e7298a', alpha=0.5)
+
+	

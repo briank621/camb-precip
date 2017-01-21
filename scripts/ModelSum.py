@@ -14,11 +14,11 @@ import GetDataMap
 
 latRange = [5,20]
 lonRange = [90,120]
-# models = ['csiro-mk3-6-0']
-models = ['noresm1-m', 'cnrm-cm5', 'bnu-esm', 'ccsm4', 'hadgem2-es']
+models = ['csiro-mk3-6-0']
+# models = ['noresm1-m', 'cnrm-cm5', 'bnu-esm', 'ccsm4', 'hadgem2-es']
 var = 'pr'
-ensemble = [1]
-# ensemble = range(1, 11)
+# ensemble = [1]
+ensemble = range(1, 11)
 monthStart = 1
 monthEnd = 12
 # monthsStart = [12, 3, 6, 9]
@@ -55,8 +55,14 @@ for m in models:
 
 	# Add Title
 	# plt.title('Weekly Precipitation in Cambodia From 1985-2005  ')
-	plt.title('Difference Weekly Precipitation in Cambodia From 2045-2065 To 1985-2005  ')
-	plt.xlabel('Weeks of the Year for model: ' + m)
+
+	path = "data/plots/high_res/diff.eps"
+	plt.title('Difference in Weekly Precipitation in Cambodia From 2045-2065 To 1985-2005  ')
+	# plt.xlabel('Weeks of the Year for model: ' + m)
+	plt.xlabel('Weeks of the Year')
+	plt.xlim(0, 53)
+	plt.ylim(-2, 6)
+	plt.savefig(path, format='eps', dpi=1000)
 # plt.ylabel('Precipitation (mm/day)')
 
 plt.show()

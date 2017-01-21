@@ -1,10 +1,4 @@
 # -*- coding: utf-8 -*-
-"""
-Created on Sat Jul 11 14:50:51 2015
-
-@author: claireyun
-"""
-
 import GetDataMap
 import FindExtremes
 

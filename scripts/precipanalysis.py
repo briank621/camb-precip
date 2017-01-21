@@ -15,11 +15,11 @@ import DrawBaseMap
 
 latRange = [5,20]
 lonRange = [90,120]
-# models = ['csiro-mk3-6-0']
-models = ['noresm1-m', 'cnrm-cm5', 'bnu-esm', 'ccsm4', 'hadgem2-es']
+models = ['csiro-mk3-6-0']
+# models = ['noresm1-m', 'cnrm-cm5', 'bnu-esm', 'ccsm4']
 var = 'pr'
-ensemble = [1]
-# ensemble = range(1, 11)
+# ensemble = [1]
+ensemble = range(1, 11)
 monthsStart = [12, 3, 6, 9]
 monthsEnd = [2, 5, 8, 11]
 #seasons from dec to february, march to may, june to august, sep to nov
@@ -49,8 +49,10 @@ for s in range(0, 4):
 	plt.figure()
 	title = 'Mean Precipitation in 2045-2065 Relative to 1985-2005 '
 	xlabel = 'Precipitation (mm/day) for Months (%d, %d)' % (monthStart, monthEnd)
+	path = "data/plots/high_res/diffprec" + str(monthStart) + ".eps"
+
 	DrawBaseMap.drawMap(flatTLon, flatTLat, flatTData, latRange, lonRange,
-						 minVal, maxVal, title, xlabel, False)
+						 minVal, maxVal, title, xlabel, path, False)
 
 plt.show()
 
